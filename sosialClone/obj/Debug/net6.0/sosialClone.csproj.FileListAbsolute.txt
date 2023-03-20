@@ -1,0 +1,14 @@
+C:\Users\Eier\source\repos\SosialClone\sosialClone\bin\Debug\net6.0\sosialClone.deps.json
+C:\Users\Eier\source\repos\SosialClone\sosialClone\bin\Debug\net6.0\sosialClone.runtimeconfig.json
+C:\Users\Eier\source\repos\SosialClone\sosialClone\bin\Debug\net6.0\sosialClone.dll
+C:\Users\Eier\source\repos\SosialClone\sosialClone\bin\Debug\net6.0\sosialClone.pdb
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.csproj.AssemblyReference.cache
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.AssemblyInfoInputs.cache
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.AssemblyInfo.cs
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.csproj.CoreCompileInputs.cache
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.dll
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\refint\sosialClone.dll
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.pdb
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\sosialClone.genruntimeconfig.cache
+C:\Users\Eier\source\repos\SosialClone\sosialClone\obj\Debug\net6.0\ref\sosialClone.dll
