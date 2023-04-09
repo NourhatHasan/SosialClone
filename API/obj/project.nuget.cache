@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nxKTFGWunN7Av8T48GaCA8SCJgCTdf05EkR48eQ3uHT/y7nNLjd27vXKoqY30i4XNAtwSbvI5gnxovw9f0u6bg==",
+  "dgSpecHash": "IDoe0CdKy/OC2v4MRHgVzjzcff6Nco927hOtAGjruOPWb9h4egEpsoIweYMmKAljHo3gwreZCUsrXoet4EZT8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eier\\source\\repos\\SosialClone\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eier\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Eier\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

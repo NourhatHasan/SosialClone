@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kfeihnqzU2UOllTFQ/6ZeHCrRjoICyFXGvmCq3FeN3Kl/+cc12c+zcK5+oZhntsH2HVl5pRy3I4LLlq0z5uzlA==",
+  "dgSpecHash": "xvBJ48hqmg9R7CpATGgdcbiwnNk6Zovo3pk/ZPQt3Z9+1+gQnA/kWf+AVASjP9BysKUAPi3IPdwSehkR1XRjvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eier\\source\\repos\\SosialClone\\RepositoryAplication\\RepositoryAplication.csproj",
+  "projectFilePath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eier\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Eier\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",

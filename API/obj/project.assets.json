@@ -4466,11 +4466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\SosialClone\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Eier\\source\\repos\\SosialClone\\API\\API.csproj",
+      "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Eier\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eier\\source\\repos\\SosialClone\\API\\obj\\",
+      "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Eier\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4487,8 +4487,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Eier\\source\\repos\\SosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
-              "projectPath": "C:\\Users\\Eier\\source\\repos\\SosialClone\\RepositoryAplication\\RepositoryAplication.csproj"
+            "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
+              "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj"
             }
           }
         }

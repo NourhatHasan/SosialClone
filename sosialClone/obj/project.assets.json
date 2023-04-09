@@ -1246,11 +1246,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\SosialClone\\sosialClone\\sosialClone.csproj",
+      "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj",
       "projectName": "sosialClone",
-      "projectPath": "C:\\Users\\Eier\\source\\repos\\SosialClone\\sosialClone\\sosialClone.csproj",
+      "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj",
       "packagesPath": "C:\\Users\\Eier\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eier\\source\\repos\\SosialClone\\sosialClone\\obj\\",
+      "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Eier\\AppData\\Roaming\\NuGet\\NuGet.Config",
