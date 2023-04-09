@@ -1,17 +1,29 @@
 ﻿
-using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 using sosialClone;
+
 
 namespace Context
 {
     public class Seed
     {
 
-        public static async Task SeedData(DataContext context)
+        // with usermanager the api manages users in stores
+        public static async Task SeedData(DataContext context, UserManager<user> userManager)
         {
+            if (!userManager.Users.Any())
+            {
+
+                var u = new user { DisplayName = "Bob", UserName = "bob", Email = "bob@test.com" };
+                   
+
+               await userManager.CreateAsync(u, "Pa$$w0rd");
+                
+            }
+
             if (context.entities.Any()) return;
 
-            var SeedActivities = new List<Entities>
+            var activities = new List<Entities>
             {
                 new Entities
                 {
@@ -105,7 +117,7 @@ namespace Context
                 }
             };
 
-            await context.entities.AddRangeAsync(SeedActivities);
+            await context.entities.AddRangeAsync(activities);
             await context.SaveChangesAsync();
         }
     }

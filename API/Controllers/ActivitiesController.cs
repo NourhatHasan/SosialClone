@@ -4,17 +4,16 @@
 using Microsoft.AspNetCore.Mvc;
 using sosialClone;
 using RepositoryAplication.Activities;
-
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace API.Controllers
 {
 
-
     public class ActivitiesController : BaseController
     {
 
-
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
