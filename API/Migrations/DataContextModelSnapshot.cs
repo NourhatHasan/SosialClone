@@ -184,6 +184,24 @@ namespace API.Migrations
                     b.ToTable("entities");
                 });
 
+            modelBuilder.Entity("sosialClone.EntityUser", b =>
+                {
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("EntityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("isHost")
+                        .HasColumnType("bit");
+
+                    b.HasKey("userId", "EntityId");
+
+                    b.HasIndex("EntityId");
+
+                    b.ToTable("EntityUser");
+                });
+
             modelBuilder.Entity("sosialClone.user", b =>
                 {
                     b.Property<string>("Id")
@@ -304,6 +322,35 @@ namespace API.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("sosialClone.EntityUser", b =>
+                {
+                    b.HasOne("sosialClone.Entities", "entities")
+                        .WithMany("users")
+                        .HasForeignKey("EntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("sosialClone.user", "user")
+                        .WithMany("entities")
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("entities");
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("sosialClone.Entities", b =>
+                {
+                    b.Navigation("users");
+                });
+
+            modelBuilder.Entity("sosialClone.user", b =>
+                {
+                    b.Navigation("entities");
                 });
 #pragma warning restore 612, 618
         }

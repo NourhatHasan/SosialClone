@@ -17,5 +17,29 @@ namespace Context
         public DbSet<user> users { get; set; }
         */
         public DbSet<Entities> entities { get; set; }
+        public DbSet<EntityUser> EntityUser { get; set; }
+
+
+        //to get a primary key which is combunation of userId and entityId
+        // and Configure the entity (one user will have many activities
+        // and one activity will have many users)
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            //form the primary key
+            builder.Entity<EntityUser>(x => x.HasKey(aa => new { aa.userId, aa.EntityId }));
+
+            builder.Entity<EntityUser>()
+                   .HasOne(u => u.user)
+                   .WithMany(a => a.entities)
+                   .HasForeignKey(aa => aa.userId);
+
+            builder.Entity<EntityUser>()
+                .HasOne(a => a.entities)
+                .WithMany(u => u.users)
+                .HasForeignKey(aa => aa.EntityId);
+        }
     }
 }

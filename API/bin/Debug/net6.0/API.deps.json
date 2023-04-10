@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.3",
           "RepositoryAplication": "1.0.0",
+          "SecretPro": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0",
           "System.IdentityModel.Tokens.Jwt": "6.27.0"
         },
@@ -904,6 +905,14 @@
           "RepositoryAplication.dll": {}
         }
       },
+      "SecretPro/1.0.0": {
+        "dependencies": {
+          "RepositoryAplication": "1.0.0"
+        },
+        "runtime": {
+          "SecretPro.dll": {}
+        }
+      },
       "sosialClone/1.0.0": {
         "dependencies": {
           "FluentValidation.AspNetCore": "11.2.2",
@@ -1543,6 +1552,11 @@
       "sha512": ""
     },
     "RepositoryAplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SecretPro/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

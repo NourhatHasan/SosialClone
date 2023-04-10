@@ -1498,6 +1498,19 @@
           "bin/placeholder/RepositoryAplication.dll": {}
         }
       },
+      "SecretPro/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RepositoryAplication": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SecretPro.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SecretPro.dll": {}
+        }
+      },
       "sosialClone/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4441,6 +4454,11 @@
       "path": "../RepositoryAplication/RepositoryAplication.csproj",
       "msbuildProject": "../RepositoryAplication/RepositoryAplication.csproj"
     },
+    "SecretPro/1.0.0": {
+      "type": "project",
+      "path": "../SecretPro/SecretPro.csproj",
+      "msbuildProject": "../SecretPro/SecretPro.csproj"
+    },
     "sosialClone/1.0.0": {
       "type": "project",
       "path": "../sosialClone/sosialClone.csproj",
@@ -4456,6 +4474,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.3",
       "RepositoryAplication >= 1.0.0",
+      "SecretPro >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "System.IdentityModel.Tokens.Jwt >= 6.27.0"
     ]
@@ -4489,6 +4508,9 @@
           "projectReferences": {
             "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
               "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj"
+            },
+            "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\SecretPro.csproj": {
+              "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\SecretPro.csproj"
             }
           }
         }

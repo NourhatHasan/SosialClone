@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using RepositoryAplication.Activities;
+using RepositoryAplication.SecretInterfaces;
+using RepositoryAplication.SecretInterfaces.security;
 using RepositoryAplication.Tools;
 using sosialClone;
 
@@ -77,6 +79,10 @@ builder.Services.AddMediatR(typeof(list.handler));
 //autoMapper
 builder.Services.AddAutoMapper(typeof(ProfileMapper).Assembly);
 
+
+//userInfo
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<userInterface, userAccesor>();
 
 
 var app = builder.Build();

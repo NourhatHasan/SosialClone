@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RepositoryAplication\RepositoryAplication.csproj" />
+    <ProjectReference Include="..\SecretPro\SecretPro.csproj" />
   </ItemGroup>
 
 </Project>
