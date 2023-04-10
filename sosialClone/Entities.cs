@@ -24,6 +24,6 @@ namespace sosialClone
       //  [Required]
         public string Venue { get; set; }
 
-        public ICollection<EntityUser> users { get; set; }= new List<EntityUser>();
+        public ICollection<EntityUser> Attendies { get; set; }= new List<EntityUser>();
     }
 }

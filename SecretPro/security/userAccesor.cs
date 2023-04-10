@@ -4,20 +4,20 @@ using System.Security.Claims;
 
 namespace RepositoryAplication.SecretInterfaces.security
 {
-    public class userAccesor : userInterface
+    public class UserAccesor : IUserAccesor
     {
         private readonly IHttpContextAccessor accessor;
 
         //we want to get acces to user
         //and we can do it by HttpContext
-        public userAccesor(IHttpContextAccessor accessor)
+        public UserAccesor(IHttpContextAccessor accessor)
         {
             this.accessor = accessor;
         }
 
         public string getUserName()
         {
-            return accessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return accessor.HttpContext.User.FindFirstValue(ClaimTypes.Name);
         }
     }
 }

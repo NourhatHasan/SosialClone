@@ -82,7 +82,7 @@ builder.Services.AddAutoMapper(typeof(ProfileMapper).Assembly);
 
 //userInfo
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<userInterface, userAccesor>();
+builder.Services.AddScoped<IUserAccesor, userAccesor>();
 
 
 var app = builder.Build();
@@ -117,7 +117,7 @@ try
 {
     //pass the datacontext and userManager to seed method
     var context = services.GetRequiredService<DataContext>();
-    var userManager = services.GetRequiredService<UserManager<user>>();
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
     await context.Database.MigrateAsync();
     await Seed.SeedData(context, userManager);
 

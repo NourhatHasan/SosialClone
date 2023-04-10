@@ -4,7 +4,7 @@ using sosialClone;
 
 namespace Context
 {
-    public class DataContext : IdentityDbContext<user>
+    public class DataContext : IdentityDbContext<AppUser>
     {
         public DataContext(DbContextOptions options) : base(options)
         {
@@ -29,17 +29,17 @@ namespace Context
             base.OnModelCreating(builder);
 
             //form the primary key
-            builder.Entity<EntityUser>(x => x.HasKey(aa => new { aa.userId, aa.EntityId }));
+            builder.Entity<EntityUser>(x => x.HasKey(aa => new { aa.AppUserId, aa.ActivityId }));
 
             builder.Entity<EntityUser>()
-                   .HasOne(u => u.user)
-                   .WithMany(a => a.entities)
-                   .HasForeignKey(aa => aa.userId);
+                   .HasOne(u => u.AppUser)
+                   .WithMany(a => a.activities)
+                   .HasForeignKey(aa => aa.AppUserId);
 
             builder.Entity<EntityUser>()
-                .HasOne(a => a.entities)
-                .WithMany(u => u.users)
-                .HasForeignKey(aa => aa.EntityId);
+                .HasOne(a => a.Activity)
+                .WithMany(u => u.Attendies)
+                .HasForeignKey(aa => aa.ActivityId);
         }
     }
 }

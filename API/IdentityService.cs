@@ -12,7 +12,7 @@ namespace API
         public static IServiceCollection AddIdentityServices(this IServiceCollection services,
            IConfiguration config)
         {
-            services.AddIdentityCore<user>(opt =>
+            services.AddIdentityCore<AppUser>(opt =>
             {
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.User.RequireUniqueEmail = true;

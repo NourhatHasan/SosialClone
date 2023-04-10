@@ -16,7 +16,7 @@ namespace API.Services
         }
 
         //our token will be a string
-        public string CreateToken(user user)
+        public string CreateToken(AppUser user)
         {
             //claims that the user claims about themeselves
             //we will put the claims in the token and extract

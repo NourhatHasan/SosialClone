@@ -15,6 +15,7 @@ namespace RepositoryAplication.Activities
 
         public class Comand:IRequest<result<Unit>>
         {
+         //   public AppUser user { get; set; }
             public Entities entities { get; set; }
         };
 
@@ -32,9 +33,9 @@ namespace RepositoryAplication.Activities
         public class handler : IRequestHandler<Comand,result<Unit>>
         {
             private readonly DataContext _dataContext;
-            private readonly userInterface _userInterface;
+            private readonly IUserAccesor _userInterface;
 
-            public handler(DataContext dataContext, userInterface userInterface)
+            public handler(DataContext dataContext, IUserAccesor userInterface)
             {
                 _dataContext = dataContext;
                 _userInterface = userInterface;
@@ -44,25 +45,30 @@ namespace RepositoryAplication.Activities
             {
 
                 var Hosteduser= await _dataContext.Users.FirstOrDefaultAsync(x=>x.UserName== _userInterface.getUserName());
+              
+                    var activityUser = new EntityUser
+                    {
+                      //  AppUser = request.user,
 
-                var activityUser = new EntityUser
-                {
-                    user = Hosteduser,
-                    entities = request.entities,
-                    isHost = true
-                };
 
-               request.entities.users.Add(activityUser);
+                        Activity = request.entities,
+                        isHost = true
+                    };
 
-               
-                _dataContext.entities.Add(request.entities);
-                var res = await _dataContext.SaveChangesAsync();
-                if (res > 0)
-                {
-                    return result<Unit>.isSucses(Unit.Value);
-                  // return new result<Unit> { success= true, data=Unit.Value};
-                }
-                return result<Unit>.Failiere("failed to add a new activity");
+                    request.entities.Attendies.Add(activityUser);
+
+
+                    _dataContext.entities.Add(request.entities);
+                    var res = await _dataContext.SaveChangesAsync();
+                    if (res > 0)
+                    {
+                        return result<Unit>.isSucses(Unit.Value);
+                        // return new result<Unit> { success= true, data=Unit.Value};
+                    }
+                    return result<Unit>.Failiere("failed to add a new activity");
+                
+         
+                
 
 
             }

@@ -1,9 +1,10 @@
 ﻿using API.DTOs;
 using API.Services;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 using sosialClone;
 using System.Security.Claims;
 
@@ -13,13 +14,14 @@ namespace API.Controllers
     [ApiController]
     public class IdentityController : ControllerBase
     {
-        private readonly UserManager<user> _userManager;
+        private readonly UserManager<AppUser> _userManager;
         private readonly TokenServices _token;
-
-        public IdentityController(UserManager<user> userManager, TokenServices token)
+      
+        public IdentityController(UserManager<AppUser> userManager, TokenServices token)
         {
             _userManager = userManager;
             _token = token;
+           
         }
 
         [AllowAnonymous]
@@ -69,7 +71,7 @@ namespace API.Controllers
                 {
                     return BadRequest("Email alrady exisit");
                 }
-                var newUser = new user
+                var newUser = new AppUser
                 {
                     Email = request.Email,
                     DisplayName = request.DisplayName,
@@ -106,6 +108,7 @@ namespace API.Controllers
                     UserName = user.UserName,
                     Tokens = _token.CreateToken(user),
                     Picture = null,
+                    
 
 
                 };
@@ -117,6 +120,13 @@ namespace API.Controllers
            
         }
 
+
+
+
+
+       
+        
+
+        }
     }
-}
 

@@ -2,7 +2,7 @@
 
 namespace RepositoryAplication.SecretInterfaces
 {
-    public interface userInterface
+    public interface IUserAccesor
     {
         string getUserName();
 

@@ -5,15 +5,21 @@ using Microsoft.AspNetCore.Mvc;
 using sosialClone;
 using RepositoryAplication.Activities;
 using Microsoft.AspNetCore.Authorization;
-
+using Azure.Core;
+using Microsoft.AspNetCore.Identity;
+using API.DTOs;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace API.Controllers
 {
 
     public class ActivitiesController : BaseController
     {
+       
 
-        
+
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -39,6 +45,7 @@ namespace API.Controllers
 
         public async Task<IActionResult> Post(Entities entities)
         {
+            //var user= await userManager.FindByEmailAsync(HttpContext.User.FindFirstValue(ClaimTypes.Email));
            return result(await Mediator.Send(new Create.Comand { entities = entities }));
         }
 
@@ -57,5 +64,10 @@ namespace API.Controllers
             return result(await Mediator.Send(new Delete.Comand { Id = Id }));
 
         }
+
+
+
+
+       
+        }
     }
-}

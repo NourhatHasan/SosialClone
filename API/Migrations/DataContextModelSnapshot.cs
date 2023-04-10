@@ -155,54 +155,7 @@ namespace API.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("sosialClone.Entities", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Catagory")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Venue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("entities");
-                });
-
-            modelBuilder.Entity("sosialClone.EntityUser", b =>
-                {
-                    b.Property<string>("userId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid>("EntityId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("isHost")
-                        .HasColumnType("bit");
-
-                    b.HasKey("userId", "EntityId");
-
-                    b.HasIndex("EntityId");
-
-                    b.ToTable("EntityUser");
-                });
-
-            modelBuilder.Entity("sosialClone.user", b =>
+            modelBuilder.Entity("sosialClone.AppUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -273,6 +226,54 @@ namespace API.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("sosialClone.Entities", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Catagory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Venue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("entities");
+                });
+
+            modelBuilder.Entity("sosialClone.EntityUser", b =>
+                {
+                    b.Property<string>("AppUserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("ActivityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("isHost")
+                        .HasColumnType("bit");
+
+                    b.HasKey("AppUserId", "ActivityId");
+
+                    b.HasIndex("ActivityId");
+
+                    b.ToTable("EntityUser");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -284,7 +285,7 @@ namespace API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("sosialClone.user", null)
+                    b.HasOne("sosialClone.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -293,7 +294,7 @@ namespace API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("sosialClone.user", null)
+                    b.HasOne("sosialClone.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -308,7 +309,7 @@ namespace API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("sosialClone.user", null)
+                    b.HasOne("sosialClone.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -317,7 +318,7 @@ namespace API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("sosialClone.user", null)
+                    b.HasOne("sosialClone.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -326,31 +327,31 @@ namespace API.Migrations
 
             modelBuilder.Entity("sosialClone.EntityUser", b =>
                 {
-                    b.HasOne("sosialClone.Entities", "entities")
-                        .WithMany("users")
-                        .HasForeignKey("EntityId")
+                    b.HasOne("sosialClone.Entities", "Activity")
+                        .WithMany("Attendies")
+                        .HasForeignKey("ActivityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("sosialClone.user", "user")
-                        .WithMany("entities")
-                        .HasForeignKey("userId")
+                    b.HasOne("sosialClone.AppUser", "AppUser")
+                        .WithMany("activities")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("entities");
+                    b.Navigation("Activity");
 
-                    b.Navigation("user");
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("sosialClone.AppUser", b =>
+                {
+                    b.Navigation("activities");
                 });
 
             modelBuilder.Entity("sosialClone.Entities", b =>
                 {
-                    b.Navigation("users");
-                });
-
-            modelBuilder.Entity("sosialClone.user", b =>
-                {
-                    b.Navigation("entities");
+                    b.Navigation("Attendies");
                 });
 #pragma warning restore 612, 618
         }

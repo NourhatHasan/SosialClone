@@ -9,12 +9,12 @@ namespace Context
     {
 
         // with usermanager the api manages users in stores
-        public static async Task SeedData(DataContext context, UserManager<user> userManager)
+        public static async Task SeedData(DataContext context, UserManager<AppUser> userManager)
         {
             if (!userManager.Users.Any())
             {
 
-                var u = new user { DisplayName = "Bob", UserName = "bob", Email = "bob@test.com" };
+                var u = new AppUser { DisplayName = "Bob", UserName = "bob", Email = "bob@test.com" };
                    
 
                await userManager.CreateAsync(u, "Pa$$w0rd");
