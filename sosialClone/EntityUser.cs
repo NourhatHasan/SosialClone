@@ -6,7 +6,7 @@ namespace sosialClone
 {
     public class EntityUser
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+     
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
         public Guid ActivityId { get; set; }

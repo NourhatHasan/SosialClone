@@ -44,13 +44,14 @@ namespace RepositoryAplication.Activities
             public async Task<result<Unit>> Handle(Comand request, CancellationToken cancellationToken)
             {
 
-                var Hosteduser= await _dataContext.Users.FirstOrDefaultAsync(x=>x.UserName== _userInterface.getUserName());
+                var Hosteduser= await _dataContext.Users.FirstOrDefaultAsync(x=>x.UserName==_userInterface.getUserName());
+               // var Hosteduser = await _dataContext.Users.FindAsync(_userInterface.getUserName());
               
                     var activityUser = new EntityUser
                     {
                       //  AppUser = request.user,
 
-
+                        AppUser=Hosteduser,
                         Activity = request.entities,
                         isHost = true
                     };

@@ -1,31 +1,34 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
 
-namespace sosialClone
+using RepositoryAplication.DTOs;
+
+namespace RepositoryAplication.Activities
 {
-    public class Entities
+    public class ActivityDTO
     {
         public Guid Id { get; set; }
 
         //[Required] I will use fluentValdation (automatic validation)
         public string Title { get; set; }
 
-       // [Required]
+        // [Required]
         public DateTime Date { get; set; }
 
-      //  [Required]
+        //  [Required]
         public string Description { get; set; }
 
-       // [Required]
+        // [Required]
         public string Catagory { get; set; }
 
-      //  [Required]
+        //  [Required]
         public string City { get; set; }
 
-      //  [Required]
+        //  [Required]
         public string Venue { get; set; }
+        public string HostUsername { get; set; }
 
         public bool isCancled { get; set; }
 
-        public ICollection<EntityUser> Attendies { get; set; }= new List<EntityUser>();
+        public ICollection<ProfileDTO> Attendies { get; set; }
     }
 }

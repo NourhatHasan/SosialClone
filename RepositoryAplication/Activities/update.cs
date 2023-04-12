@@ -2,6 +2,7 @@
 using Context;
 using FluentValidation;
 using MediatR;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using RepositoryAplication.Tools;
 using sosialClone;
 
@@ -43,6 +44,8 @@ namespace RepositoryAplication.Activities
                 {
                     return null;
                 }
+
+               // here we have an activity we can map to from the request
                 mapper.Map(request.entities, activty);
                 var res = await _dataContext.SaveChangesAsync();
                 if (res > 0)

@@ -13,7 +13,10 @@ using RepositoryAplication.Activities;
 using RepositoryAplication.SecretInterfaces;
 using RepositoryAplication.SecretInterfaces.security;
 using RepositoryAplication.Tools;
+
+using SecretPro.security;
 using sosialClone;
+using static SecretPro.security.sHostRequirement;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +30,21 @@ builder.Services.AddControllers(opts=>
     //every controller endPoint will require authentication
     opts.Filters.Add(new AuthorizeFilter(policy));
 }
-);  
+);
+
+
+//custom authorization policy
+builder.Services.AddAuthorization(opts =>
+opts.AddPolicy("IsHost", policy =>
+{
+   policy.Requirements.Add(new IsHostRequirement());
+})
+);
+
+//we want that the policy to last as long as the method is running
+builder.Services.AddTransient<IAuthorizationHandler, IsHostReuirementHandler>();
+
+
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -82,7 +99,7 @@ builder.Services.AddAutoMapper(typeof(ProfileMapper).Assembly);
 
 //userInfo
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<IUserAccesor, userAccesor>();
+builder.Services.AddScoped<IUserAccesor, UserAccesor>();
 
 
 var app = builder.Build();

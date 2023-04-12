@@ -4,25 +4,31 @@
 using Microsoft.AspNetCore.Mvc;
 using sosialClone;
 using RepositoryAplication.Activities;
-using Microsoft.AspNetCore.Authorization;
-using Azure.Core;
+using API.Services;
 using Microsoft.AspNetCore.Identity;
-using API.DTOs;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
 
     public class ActivitiesController : BaseController
     {
-       
 
+        private readonly UserManager<AppUser> _userManager;
+     
+
+        public ActivitiesController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+           
+        }
 
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+            
             return result( await Mediator.Send(new list.Query()));
 
 
@@ -49,15 +55,28 @@ namespace API.Controllers
            return result(await Mediator.Send(new Create.Comand { entities = entities }));
         }
 
+        [Authorize(Policy = "IsHost")]
         [HttpPut("{Id}")]
         public async Task<IActionResult> Put(Guid Id, Entities entities)
         {
             entities.Id = Id;
-            return result(await Mediator.Send(new update.Comand { entities= entities }));
+
+            return result(await Mediator.Send(new update.Comand { entities = entities }));
+          
+        }
+
+
+        [HttpPut("{Id}/updateUser")]
+        public async Task<IActionResult> updateUser(Guid Id)
+        {
+         
+            return result(await Mediator.Send(new UpdateUsers.Comand { Id= Id }));
 
         }
 
 
+
+        [Authorize(Policy = "IsHost")]
         [HttpDelete("{Id}")]
         public async Task<IActionResult> Delete(Guid Id)
         {

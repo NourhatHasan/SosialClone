@@ -1,5 +1,6 @@
 ﻿
 
+using AutoMapper;
 using Context;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -9,20 +10,27 @@ namespace RepositoryAplication.Activities
 {
     public class list
     {
-        public class Query:IRequest <result<List<Entities>>>{};
-        public class handler : IRequestHandler<Query,result<List<Entities>>>
+        public class Query:IRequest <result<List<ActivityDTO>>>{};
+        public class handler : IRequestHandler<Query,result<List<ActivityDTO>>>
         {
             private readonly DataContext _dataContext;
+            private readonly IMapper mapper;
 
-            public handler(DataContext dataContext)
+            public handler(DataContext dataContext, IMapper mapper)
             {
                 _dataContext = dataContext;
+                this.mapper = mapper;
             }
 
-            public async Task<result<List<Entities>>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<result<List<ActivityDTO>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var res = await _dataContext.entities.ToListAsync();
-                return result<List<Entities>>.isSucses(res);
+                var res = await _dataContext.entities
+                    .Include(x=>x.Attendies)
+                    .ThenInclude(u=>u.AppUser)
+                    .ToListAsync();
+                var activityToReturn =mapper.Map<List<ActivityDTO>>(res);
+                //mapping from entities to activityDTO
+                return result<List<ActivityDTO>>.isSucses(activityToReturn);
             }
         }
 
