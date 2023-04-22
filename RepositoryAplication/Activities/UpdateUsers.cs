@@ -48,26 +48,27 @@ namespace RepositoryAplication.Activities
 
 
                 //sjekker om vi har user som atendy i activity
-                var atendy = activity.Attendies.FirstOrDefault(x => x.AppUser.UserName == user.UserName);
+                var atendee = activity.Attendies.FirstOrDefault(x => x.AppUser.UserName == user.UserName);
 
-                if(atendy!=null && hostUserName==user.UserName)
+                if(atendee!=null && hostUserName==user.UserName)
                 {
                    activity.isCancled= !activity.isCancled;
                 }
-                if (atendy != null && hostUserName != user.UserName)
+                if (atendee != null && hostUserName != user.UserName)
                 {
-                    activity.Attendies.Remove(atendy);
+                    activity.Attendies.Remove(atendee);
                 }
-                if (atendy == null)
+                if (atendee == null)
                 {
-                    atendy = new EntityUser
+                    atendee = new EntityUser
                     {
                         AppUser = user,
                         Activity = activity,
                         isHost = false
                     };
-                    activity.Attendies.Add(atendy) ;
+                    activity.Attendies.Add(atendee) ;
                 }
+
                 var res = await dataContext.SaveChangesAsync();
                 if (res > 0)
                 {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\API.csproj": {}
+    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\API.csproj": {
+    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Eier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\API\\obj\\",
+        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eier\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
-                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj"
+              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
+                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj"
               },
-              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\SecretPro.csproj": {
-                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\SecretPro.csproj"
+              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\SecretPro\\SecretPro.csproj": {
+                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\SecretPro\\SecretPro.csproj"
               }
             }
           }
@@ -107,14 +107,14 @@
         }
       }
     },
-    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\DataContext\\Context.csproj": {
+    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\DataContext\\Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\DataContext\\Context.csproj",
+        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\DataContext\\Context.csproj",
         "projectName": "Context",
-        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\DataContext\\Context.csproj",
+        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\DataContext\\Context.csproj",
         "packagesPath": "C:\\Users\\Eier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\DataContext\\obj\\",
+        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\DataContext\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eier\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -131,8 +131,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj": {
-                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj"
+              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\sosialClone.csproj": {
+                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\sosialClone.csproj"
               }
             }
           }
@@ -172,14 +172,14 @@
         }
       }
     },
-    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
+    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj",
+        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj",
         "projectName": "RepositoryAplication",
-        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj",
+        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj",
         "packagesPath": "C:\\Users\\Eier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\obj\\",
+        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eier\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -196,11 +196,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\DataContext\\Context.csproj": {
-                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\DataContext\\Context.csproj"
+              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\DataContext\\Context.csproj": {
+                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\DataContext\\Context.csproj"
               },
-              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj": {
-                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj"
+              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\sosialClone.csproj": {
+                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\sosialClone.csproj"
               }
             }
           }
@@ -244,14 +244,14 @@
         }
       }
     },
-    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\SecretPro.csproj": {
+    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\SecretPro\\SecretPro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\SecretPro.csproj",
+        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\SecretPro\\SecretPro.csproj",
         "projectName": "SecretPro",
-        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\SecretPro.csproj",
+        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\SecretPro\\SecretPro.csproj",
         "packagesPath": "C:\\Users\\Eier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\SecretPro\\obj\\",
+        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\SecretPro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eier\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -268,8 +268,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
-                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj"
+              "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj": {
+                "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\RepositoryAplication\\RepositoryAplication.csproj"
               }
             }
           }
@@ -303,14 +303,14 @@
         }
       }
     },
-    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj": {
+    "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\sosialClone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj",
+        "projectUniqueName": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\sosialClone.csproj",
         "projectName": "sosialClone",
-        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\sosialClone.csproj",
+        "projectPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\sosialClone.csproj",
         "packagesPath": "C:\\Users\\Eier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\sosialClone\\obj\\",
+        "outputPath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\sosialClone\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eier\\AppData\\Roaming\\NuGet\\NuGet.Config",

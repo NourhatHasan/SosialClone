@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6XtgXpeeGlSlgEAlMLplT5lv7H3cTTv7ovHUqEFPqciyFY4wnq3FYPCtAh5RRRHPLskdCH3eDYdFfAho7IKcrw==",
+  "dgSpecHash": "6h1KjHPRU7GT/Y3acWyjSCkgXuDVFrKJUFjWGYygA7wNyP5r93Fe2NKYda/XnbPHmx0PEOtYPW0BcOZqTD6KeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone\\DataContext\\Context.csproj",
+  "projectFilePath": "C:\\Users\\Eier\\source\\repos\\sosialCloneZip14\\sosialClone15\\sosialClone\\DataContext\\Context.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eier\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\Eier\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",

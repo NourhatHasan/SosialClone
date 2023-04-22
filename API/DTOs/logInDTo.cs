@@ -4,6 +4,7 @@ namespace API.DTOs
 {
     public class logInDTo
     {
+        //DTOS to receive data
         [Required]
         public string Email { get; set; }
       

@@ -66,7 +66,7 @@ namespace API.Controllers
         }
 
 
-        [HttpPut("{Id}/updateUser")]
+        [HttpPost("{Id}/updateUser")]
         public async Task<IActionResult> updateUser(Guid Id)
         {
          

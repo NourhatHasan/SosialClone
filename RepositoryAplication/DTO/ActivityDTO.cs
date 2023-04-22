@@ -6,6 +6,7 @@ namespace RepositoryAplication.Activities
 {
     public class ActivityDTO
     {
+       //DTOs to send data  
         public Guid Id { get; set; }
 
         //[Required] I will use fluentValdation (automatic validation)
