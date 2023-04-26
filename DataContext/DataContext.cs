@@ -18,6 +18,7 @@ namespace Context
         */
         public DbSet<Entities> entities { get; set; }
         public DbSet<EntityUser> EntityUser { get; set; }
+        public DbSet<Photo> photos { get; set; }
 
 
         //to get a primary key which is combunation of userId and entityId

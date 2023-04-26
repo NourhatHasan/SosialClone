@@ -276,6 +276,27 @@ namespace API.Migrations
                     b.ToTable("EntityUser");
                 });
 
+            modelBuilder.Entity("sosialClone.photo", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("photos");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -346,9 +367,18 @@ namespace API.Migrations
                     b.Navigation("AppUser");
                 });
 
+            modelBuilder.Entity("sosialClone.photo", b =>
+                {
+                    b.HasOne("sosialClone.AppUser", null)
+                        .WithMany("photos")
+                        .HasForeignKey("AppUserId");
+                });
+
             modelBuilder.Entity("sosialClone.AppUser", b =>
                 {
                     b.Navigation("activities");
+
+                    b.Navigation("photos");
                 });
 
             modelBuilder.Entity("sosialClone.Entities", b =>

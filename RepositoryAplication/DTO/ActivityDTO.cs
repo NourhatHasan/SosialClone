@@ -1,5 +1,6 @@
 ﻿
 
+using RepositoryAplication.DTO;
 using RepositoryAplication.DTOs;
 
 namespace RepositoryAplication.Activities
@@ -30,6 +31,6 @@ namespace RepositoryAplication.Activities
 
         public bool isCancled { get; set; }
 
-        public ICollection<ProfileDTO> Attendies { get; set; }
+        public ICollection<AtendeeDTO> Attendies { get; set; }
     }
 }

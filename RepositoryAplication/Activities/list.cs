@@ -27,8 +27,10 @@ namespace RepositoryAplication.Activities
                 var res = await _dataContext.entities
                     .Include(x=>x.Attendies)
                     .ThenInclude(u=>u.AppUser)
+                    .ThenInclude(l=>l.photos)
                     .ToListAsync();
                 var activityToReturn =mapper.Map<List<ActivityDTO>>(res);
+                
                 //mapping from entities to activityDTO
                 return result<List<ActivityDTO>>.isSucses(activityToReturn);
             }

@@ -311,3 +311,5 @@ C:\Users\Eier\source\repos\sosialCloneZip14\sosialClone15\sosialClone\API\obj\De
 C:\Users\Eier\source\repos\sosialCloneZip14\sosialClone15\sosialClone\API\obj\Debug\net6.0\API.pdb
 C:\Users\Eier\source\repos\sosialCloneZip14\sosialClone15\sosialClone\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\Eier\source\repos\sosialCloneZip14\sosialClone15\sosialClone\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\Eier\source\repos\sosialCloneZip14\sosialClone15\sosialClone\API\bin\Debug\net6.0\CloudinaryDotNet.dll
+C:\Users\Eier\source\repos\sosialCloneZip14\sosialClone15\sosialClone\API\bin\Debug\net6.0\Newtonsoft.Json.dll

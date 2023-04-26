@@ -1,6 +1,7 @@
 
 
 using API;
+using CloudinaryDotNet;
 using Context;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -10,10 +11,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using RepositoryAplication.Activities;
+using RepositoryAplication.photo;
 using RepositoryAplication.SecretInterfaces;
 using RepositoryAplication.SecretInterfaces.security;
 using RepositoryAplication.Tools;
-
+using SecretPro.Photos;
 using SecretPro.security;
 using sosialClone;
 using static SecretPro.security.sHostRequirement;
@@ -100,6 +102,11 @@ builder.Services.AddAutoMapper(typeof(ProfileMapper).Assembly);
 //userInfo
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IUserAccesor, UserAccesor>();
+
+//Cloudinary settings
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("Cloudinary"));
+builder.Services.AddScoped<IPhotoAccoesor, photoAccesor>();
+
 
 
 var app = builder.Build();

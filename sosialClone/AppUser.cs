@@ -13,6 +13,7 @@ namespace sosialClone
         public string Bio { get; set; }
     
         public ICollection<EntityUser> activities { get; set; }
+        public ICollection<Photo> photos { get; set; }
 
        
     }
