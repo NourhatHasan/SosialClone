@@ -1,0 +1,3 @@
+[submodule "client-pro"]
+	path = client-pro
+	url = ./client-pro
