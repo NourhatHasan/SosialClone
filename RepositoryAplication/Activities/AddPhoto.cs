@@ -43,6 +43,8 @@ namespace RepositoryAplication.Activities
               
                
                 if (user == null) { return null; }
+
+                //addphoto returns URL and PublicID
                 var addPhoto = await photoAccoesor.uploadPhoto(request.File);
 
 
@@ -50,7 +52,7 @@ namespace RepositoryAplication.Activities
                 var returnPhoto = new Photo
                 {
                     Id = addPhoto.PublicId,
-                    Url = addPhoto.PublicId
+                    Url = addPhoto.Url
                 };
                 if (!user.photos.Any(x => x.IsMain))
                 {

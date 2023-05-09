@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Context;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -30,9 +31,9 @@ namespace RepositoryAplication.Activities
 
             public async Task<result<ProfileDTO>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var user = await dataContext.Users.Include(x => x.photos).
+               var user = await dataContext.Users.Include(x => x.photos).
                     FirstOrDefaultAsync(x => x.UserName == request.username);
-
+             
                 if (user == null)
                 {
                     return null;
@@ -47,7 +48,7 @@ namespace RepositoryAplication.Activities
                   };
                 */
 
-                var userToReturn = mapper.Map<ProfileDTO>(user);
+               var userToReturn = mapper.Map<ProfileDTO>(user);
                 return result<ProfileDTO>.isSucses(userToReturn);
             }
         }

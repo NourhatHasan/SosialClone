@@ -4,7 +4,7 @@ using API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
 using sosialClone;
 using System.Security.Claims;
 
@@ -28,7 +28,8 @@ namespace API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<userDTO>> logIn(logInDTo request)
         {
-            var user = await _userManager.FindByEmailAsync(request.Email);
+            var user = await _userManager.Users.Include(x=>x.photos).FirstOrDefaultAsync(o=>o.Email == request.Email);
+          //  var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
                 return Unauthorized();
@@ -36,17 +37,23 @@ namespace API.Controllers
             var checkPassword = await _userManager.CheckPasswordAsync(user, request.Password);
             if (checkPassword)
             {
+
                 return new userDTO
                 {
                     DisplayName = user.DisplayName,
                     UserName = user.UserName,
-                    Picture = null,
-                    Tokens = _token.CreateToken(user)
+                    Tokens = _token.CreateToken(user),
+                     Picture = user?.photos?.FirstOrDefault(x => x.IsMain)?.Url,
+
 
                 };
 
             }
-            return Unauthorized();
+           
+            
+                return Unauthorized();
+           
+        
         }
 
 
@@ -99,7 +106,9 @@ namespace API.Controllers
         [HttpGet("current")]
         public async Task<ActionResult<userDTO>> currentUser()
         {
-            var user =await _userManager.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));
+          //  var user =await _userManager.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));
+
+          var user= await _userManager.Users.Include(p=>p.photos).FirstOrDefaultAsync(x=>x.Email== User.FindFirstValue(ClaimTypes.Email));
             if (user!=null)
             {
                 return new userDTO
@@ -107,7 +116,7 @@ namespace API.Controllers
                     DisplayName = user.DisplayName,
                     UserName = user.UserName,
                     Tokens = _token.CreateToken(user),
-                    Picture = null,
+                    Picture = user?.photos?.FirstOrDefault(x=>x.IsMain)?.Url,
                     
 
 

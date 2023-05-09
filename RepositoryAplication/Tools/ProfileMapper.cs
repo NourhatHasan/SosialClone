@@ -20,10 +20,10 @@ namespace RepositoryAplication.Tools
             CreateMap<EntityUser, AtendeeDTO>()
                 .ForMember(x => x.username, o => o.MapFrom(a => a.AppUser.UserName))
                 .ForMember(x => x.DisplayName, o => o.MapFrom(a => a.AppUser.DisplayName))
-                 .ForMember(x => x.Picture, o =>
-                o.MapFrom(a => a.AppUser.photos.FirstOrDefault(x => x.IsMain).Url))
-                .ForMember(x => x.Bio, o => o.MapFrom(a => a.AppUser.Bio));
-               
+                .ForMember(x => x.Bio, o => o.MapFrom(a => a.AppUser.Bio))
+               // .ForMember(x=>x.photos, o=>o.MapFrom(a=>a.AppUser.photos.ToList()))
+            .ForMember(x => x.Picture, o => o.MapFrom(a => a.AppUser.photos.FirstOrDefault(l => l.IsMain).Url));
+            
 
             CreateMap<AppUser, ProfileDTO>()
                 .ForMember(x => x.Picture, o =>

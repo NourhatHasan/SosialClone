@@ -37,7 +37,7 @@ namespace SecretPro.Photos
         {
             if (file.Length > 0)
             {
-                //save the file before it becomes a memory
+                //save the file before it disposes after becoming a memory
                 await using var stream = file.OpenReadStream();
 
                 var uploadImage = new ImageUploadParams
@@ -56,7 +56,7 @@ namespace SecretPro.Photos
                 return new uploadPhoto
                 {
                     PublicId = add.PublicId,
-                    url = add.SecureUrl.ToString()
+                    Url = add.SecureUrl.ToString()
                 };
 
 

@@ -9,6 +9,6 @@ namespace RepositoryAplication.photo
     public class uploadPhoto
     {
         public string PublicId { get; set; }
-        public string url { get; set; }
+        public string Url { get; set; }
     }
 }

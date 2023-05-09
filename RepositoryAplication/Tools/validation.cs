@@ -1,11 +1,5 @@
 ﻿using FluentValidation;
 using sosialClone;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RepositoryAplication.Tools
 {
     public class Validation : AbstractValidator<Entities>

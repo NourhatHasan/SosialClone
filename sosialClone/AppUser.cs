@@ -11,7 +11,7 @@ namespace sosialClone
         //in addition to the one we add here
         public string DisplayName { get; set; }
         public string Bio { get; set; }
-    
+        
         public ICollection<EntityUser> activities { get; set; }
         public ICollection<Photo> photos { get; set; }
 

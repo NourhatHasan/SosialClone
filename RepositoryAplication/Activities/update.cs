@@ -44,6 +44,7 @@ namespace RepositoryAplication.Activities
                 {
                     return null;
                 }
+                
 
                // here we have an activity we can map to from the request
                 mapper.Map(request.entities, activty);
