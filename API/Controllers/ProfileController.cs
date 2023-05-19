@@ -1,9 +1,9 @@
-﻿using API.DTOs;
-using MediatR;
+﻿
+using API.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryAplication.Activities;
-using sosialClone;
+using RepositoryAplication.DTO;
 
 namespace API.Controllers
 {
@@ -39,12 +39,13 @@ namespace API.Controllers
 
 
         [AllowAnonymous]
-        [HttpPut("{Id}")]
-        public async Task<IActionResult> Put(string Id, AppUser appUser)
-        {
-            appUser.Id = Id;
+        [HttpPut]
+        public async Task<IActionResult> Put(UpdateProfileDTO updateProfileDTO) 
 
-            return result(await Mediator.Send(new updateProfile.Comand { appUser= appUser, }));
+        {
+
+            
+            return result(await Mediator.Send(new updateProfile.Comand { UpdateProfileDTO= updateProfileDTO }));
 
         }
 

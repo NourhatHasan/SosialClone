@@ -16,13 +16,6 @@ namespace RepositoryAplication.Tools
         }
     }
 
-    public class AppValidation : AbstractValidator<AppUser>
-    {
-        public AppValidation()
-        {
-            RuleFor(x => x.UserName).MinimumLength(6);
-           
-
-        }
-    }
+   
+    
 }
