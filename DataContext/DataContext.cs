@@ -19,6 +19,7 @@ namespace Context
         public DbSet<Entities> entities { get; set; }
         public DbSet<EntityUser> EntityUser { get; set; }
         public DbSet<Photo> photos { get; set; }
+        public DbSet<Comment> comments { get; set; }
 
 
         //to get a primary key which is combunation of userId and entityId
@@ -41,6 +42,23 @@ namespace Context
                 .HasOne(a => a.Activity)
                 .WithMany(u => u.Attendies)
                 .HasForeignKey(aa => aa.ActivityId);
+
+          
+            
+            //når en aktivitet blir slettet
+            //så komentarene vil også bli slettet
+            builder.Entity<Comment>()
+                .HasOne(u => u.Activity)
+                .WithMany(a => a.Comments)
+                .OnDelete(DeleteBehavior.Cascade);
+
+          
         }
     }
 }
+
+/*    if we use Ristrict 
+ * if we have an activity that has comments 
+ *the Ristrict will make sure the activity will 
+ *not be deleted
+ * */

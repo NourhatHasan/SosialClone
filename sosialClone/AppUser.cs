@@ -14,7 +14,12 @@ namespace sosialClone
         
         public ICollection<EntityUser> activities { get; set; }
         public ICollection<Photo> photos { get; set; }
-
+        
+        //who is following the current user
+        public ICollection<Following> follwers { get; set; }
+        
+        //who the current user is following
+        public ICollection<Following> followings { get; set; }
        
     }
 }

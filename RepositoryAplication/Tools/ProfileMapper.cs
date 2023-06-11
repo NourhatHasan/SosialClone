@@ -30,7 +30,10 @@ namespace RepositoryAplication.Tools
                 .ForMember(x => x.Picture, o =>
                 o.MapFrom(a => a.photos.FirstOrDefault(x => x.IsMain).Url));
 
-           
+           CreateMap<Comment, CommentDTO>()
+               .ForMember(x => x.userName, o => o.MapFrom(a => a.Auther.UserName))
+               .ForMember(x => x.DisplayName, o => o.MapFrom(a => a.Auther.DisplayName))
+              .ForMember(x => x.picture, o => o.MapFrom(a => a.Auther.photos.FirstOrDefault(l => l.IsMain).Url));
         }
     }
 }

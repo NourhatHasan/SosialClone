@@ -27,5 +27,6 @@ namespace sosialClone
         public bool isCancled { get; set; }
 
         public ICollection<EntityUser> Attendies { get; set; }= new List<EntityUser>();
+        public ICollection<Comment> Comments { get; set; }= new List<Comment>();
     }
 }

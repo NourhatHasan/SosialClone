@@ -1,7 +1,7 @@
 
 
 using API;
-using CloudinaryDotNet;
+using API.SignalR;
 using Context;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -16,7 +16,6 @@ using RepositoryAplication.SecretInterfaces;
 using RepositoryAplication.SecretInterfaces.security;
 using RepositoryAplication.Tools;
 using SecretPro.Photos;
-using SecretPro.security;
 using sosialClone;
 using static SecretPro.security.sHostRequirement;
 
@@ -34,7 +33,28 @@ builder.Services.AddControllers(opts=>
 }
 );
 
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("AllowOrigin", options => options
+     .SetIsOriginAllowed(_ => true) // Allow any origin
+     .AllowAnyMethod()
+     .AllowAnyHeader()
+     .AllowCredentials());
+});
 
+
+
+
+/*
+builder.Services.AddCors(opts =>
+{
+    opts.AddPolicy("CorsPolicy", policy =>
+    {
+        policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000/");
+    });
+});
+
+*/
 //custom authorization policy
 builder.Services.AddAuthorization(opts =>
 opts.AddPolicy("IsHost", policy =>
@@ -66,23 +86,8 @@ builder.Services.AddDbContext<DataContext>(
 builder.Services.AddIdentityServices(builder.Configuration);
 
 
-//connect  to brouser
 
-builder.Services.AddCors(c =>
-{
-    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().
-     AllowAnyHeader());
-});
 
-/*
-builder.Services.AddCors(opts =>
-{
-    opts.AddPolicy("CorsPolicy", policy =>
-    {
-        policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000/");
-    });
-});
-*/
 
 
 //fluentValidation
@@ -107,7 +112,8 @@ builder.Services.AddScoped<IUserAccesor, UserAccesor>();
 builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("Cloudinary"));
 builder.Services.AddScoped<IPhotoAccoesor, photoAccesor>();
 
-
+//SignalR
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -132,6 +138,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//create the root to connect to chatHub
+app.MapHub<ChatHub>("/chat");
+
+
 
 
 //seeding the data

@@ -226,6 +226,35 @@ namespace API.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("sosialClone.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid?>("ActivityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AutherId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActivityId");
+
+                    b.HasIndex("AutherId");
+
+                    b.ToTable("comments");
+                });
+
             modelBuilder.Entity("sosialClone.Entities", b =>
                 {
                     b.Property<Guid>("Id")
@@ -276,7 +305,7 @@ namespace API.Migrations
                     b.ToTable("EntityUser");
                 });
 
-            modelBuilder.Entity("sosialClone.photo", b =>
+            modelBuilder.Entity("sosialClone.Photo", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -348,6 +377,22 @@ namespace API.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("sosialClone.Comment", b =>
+                {
+                    b.HasOne("sosialClone.Entities", "Activity")
+                        .WithMany("Comments")
+                        .HasForeignKey("ActivityId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("sosialClone.AppUser", "Auther")
+                        .WithMany()
+                        .HasForeignKey("AutherId");
+
+                    b.Navigation("Activity");
+
+                    b.Navigation("Auther");
+                });
+
             modelBuilder.Entity("sosialClone.EntityUser", b =>
                 {
                     b.HasOne("sosialClone.Entities", "Activity")
@@ -367,7 +412,7 @@ namespace API.Migrations
                     b.Navigation("AppUser");
                 });
 
-            modelBuilder.Entity("sosialClone.photo", b =>
+            modelBuilder.Entity("sosialClone.Photo", b =>
                 {
                     b.HasOne("sosialClone.AppUser", null)
                         .WithMany("photos")
@@ -384,6 +429,8 @@ namespace API.Migrations
             modelBuilder.Entity("sosialClone.Entities", b =>
                 {
                     b.Navigation("Attendies");
+
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }
